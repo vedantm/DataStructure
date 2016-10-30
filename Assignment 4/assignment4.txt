@@ -1,0 +1,29 @@
+ESO211 2011-12 I
+Assignment 4  (programming)
+Submission date 30 September 2011
+
+1) In the main program define an array, H, of integers of size 1000
+which will be used to implement a heap. Define a global variable "heapSize"
+to denote the entries in $H$ (so size will increase by 1 on insertion
+and decrease by 1 on MaxDeletion).
+
+Ask the user for a positive integer n less than 1000. Then read n integers 
+from the user and insert it in H, as a heap. Then do MaxDelete n times
+and print the deleted entry each time.
+
+Note that this will output the integers sorted in decreasing order.
+
+2) Write 
+void InsertHeap(int x){....}
+which inserts integer x and updates the variable heapSize.
+
+3) Write
+int MaxDelete(){....}
+which MaxDeletes the heap, returns the deleted integer, and 
+updates the variable heapSize.
+
+4) Write
+void PrintArray(){.....}
+which just prints the content of the array H from H[1] to H[heapSize].
+
+Note this routine will be used only for grading purpose.

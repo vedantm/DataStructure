@@ -1,0 +1,84 @@
+ESO211 2011-12 I
+Assignment 2  (programming)
+
+
+Design a record with two field: bit and next as described below.
+
+type
+	bit-cell = record
+		bit : 0..1;
+		next: ^bit-cell
+	end
+
+Appropriately write it in C using struct.
+
+Next write the following procedures.
+
+1) bit_cell *create_list(){....}
+
+which creates an empty list bit-cells and returns a pointer to it.
+
+
+2) void insert_head(int b,bit_cell *p){...}
+
+which inserts a new cell containing bit b at the head of the
+list pointed by p.
+
+3) int top(bit_cell *p){...}
+
+which reads the bit in the cell at the head of the list pointed by p.
+It returns -1 if the list is empty.
+
+4) void delete_head(bit_cell *p){...}
+
+which deletes the first cell of the list pointed by p.
+
+5) bit_cell *make_list(int k){...}
+
+makes a list of k bits given by the user from most significant to the
+least significant bit. It returns a pointer to the list.
+
+6) void print_list(bit_cell *p){...}
+
+print the bits of a list from head to the tail.
+
+7) void increment(bit_cell *p){...}
+
+adds 1 to the number in the list pointed by p assuming the head
+is the least significant bit.
+
+8) int evaluate(bit_cell *p){...}
+
+determines the decimal equivalent of the binary number stored in
+the list pointed by p.
+
+9) void reverse(bit_cell *p){...}
+
+modifies the list, without creating any new cell or changing the 
+bit inside any cell, so the cell are ordered in the reverse order.
+Hint: detach one cell at a time and build the new list in reverse order.
+Make p point to the new list.
+
+10) In the main program ask the user for an integer k, a sequence of k bits,
+build a list of these bits, print this list, evaluate the value of the
+list in decimal, ask for an integer l from the user, increment the list
+by l, print the list, reverse the list, and print it. So the main routine
+is the following.
+
+main(){scanf("%d",&k);
+       p = create_list();
+       for(i=0;i<k,i++){scanf("%d",&j); insert_head(j,p);}
+       print_list(p);
+       j = evaluate(p);
+       printf("%d\n",j),
+       scanf("%d",&l);
+       for(i=0;i<l,i++){increment(p);}
+       print_list(p);
+       reverse(p);
+       print_list(p);}
+       
+
+
+
+
+

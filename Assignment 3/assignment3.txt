@@ -1,0 +1,72 @@
+ESO211 2011-12 I
+Assignment 3  (programming) 
+Submission date 3-09-2011
+
+Node: All programming assignments must be done using C. You must
+submit a .c file which can be compiled by gcc.
+
+Define C structures equivalent to the following.
+
+(1) a record with three fields: data, left, and right as described below.
+
+type
+	   node = record
+		data: int;
+		left: ^node;
+		right: ^node;
+		parent: ^node
+	end
+
+(2) a tree type which stores multi-set of integers as a BST. 
+
+type
+	binTree = record
+		root: ^node
+	end
+
+
+Next write the following procedures.
+
+1) binTree createTree(){....}
+
+which creates an empty binary tree.
+
+2) void insert(int x, binTree T){....}
+
+which inserts integer x in the BST T.
+
+3) void delete(node *p, binTree T){....}
+
+which deletes the node pointed by p, if p is not null,
+from the BST T. The property of BST T must hold after deletion.  You are also required to release the memory that was pointed by p.
+
+4) void depthFirst(binTree T){....}
+
+which visits the nodes in pre-fix order and on visiting each 
+node for the first time it prints its integer. So every integer
+is printed once.
+
+5) node *search(int x , binTree T) {...} 
+
+It should search the first occurrence of x in binTree and return a pointer to it if it exists.
+
+6) node *LUB(int x, binTree T){....}
+
+It should locate the node of that integer in T which is
+closest to the given integer x and which is greater than or 
+equal to x, if it exists. It returns a pointer to this node.
+
+7) The main routine 
+
+(i) creates a binary tree,
+(ii) reads 10 integers from the user,
+(iii) inserts them in that order in the tree,
+(iv) runs depthFirst,
+(v) reads one integer z from the user and prints whether or not it exists in 
+the tree,
+(vi) reads one integer x from the user,
+(vii) locates the nearest integer y in the tree which
+is greater than or equal to x,
+(viii) If y exists, then deletes it from the tree otherwise
+print the message "no such integer found",
+(ix) runs depthFirst.
